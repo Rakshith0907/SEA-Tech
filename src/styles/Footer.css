@@ -1,0 +1,104 @@
+/* ============================================
+   FOOTER — SEA-Tech
+   ============================================ */
+
+
+
+
+footer {
+  background: var(--green-deep);
+  border-top: 1px solid var(--green-mid);
+}
+
+.footer-top {
+  padding: 36px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-brand-tagline {
+  padding-left: 0;
+  font-size: 13px;
+  color: var(--accent-muted);
+  margin: 8px 0 0;
+  font-style: italic;
+}
+
+.brand{
+  height: fit-content;
+  img{
+    max-width: 200px;
+  };
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--offwhite);
+}
+
+.contact-item i {
+  font-size: 16px;
+  color: var(--accent);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--green-mid);
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: var(--accent-muted);
+}
+
+.footer-tagline {
+  font-size: 12px;
+  color: var(--accent-muted);
+  font-style: italic;
+}
+
+
+/* ── Responsive ── */
+/* @media (max-width: 768px) {
+  .footer {
+    padding-top: 60px;
+  }
+
+  .footer__grid {
+    gap: 36px;
+    padding-bottom: 44px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+} */
+ @media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 28px;
+    padding: 28px 24px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 14px 24px;
+  }
+}
