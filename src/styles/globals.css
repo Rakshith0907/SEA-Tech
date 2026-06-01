@@ -8,12 +8,17 @@
   margin: 0;
   padding: 0;
 }
+/* main {
+  padding-top: 70px;
+} */
 
 :root {
   /* Brand palette — muted, cinematic */
   --green:        #0B3D2E;
   --green-deep:   #071f18;
   --green-mid:    #16543f;
+  --green-base-rgb: 19, 61, 40;
+  --grid-line: rgba(127, 176, 105, 0.07);
   --teal:         #0E5C5A;
   --teal-light:   #1a7a77;
   --slate:        #334E68;

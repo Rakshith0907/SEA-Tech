@@ -14,7 +14,7 @@
 }
 
 .navbar--transparent {
-  background: rgba(0, 0, 0, 0);
+  background: rgba(221, 221, 221, 0.384);
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
   box-shadow: 0 8px 32px rgba(0,0,0,0.15);
@@ -379,12 +379,25 @@
   .navbar__actions .btn-primary {
     display: none;
   }
+  .navbar--transparent{
+    button{
+      color: var(--green-mid);
+    }
+  }
+
+  .navbar--scrolled{
+    background: var(--offwhite);
+    button{
+      color: var(--green-mid);
+    }
+  }
 }
 
 @media (max-width: 480px) {
   .navbar__logo img {
     width: 118px;
   }
+
   .navbar--scrolled{
     background: var(--offwhite);
     button{
