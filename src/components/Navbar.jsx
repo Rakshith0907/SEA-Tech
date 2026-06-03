@@ -3,44 +3,68 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { ChevronDown, Menu, X, Leaf, Zap, Sprout, Shield } from 'lucide-react'
 import '../styles/Navbar.css'
 
-const seaItems = [
-  { label: 'Sustainability',    path: '/sustainability',    icon: Leaf,   desc: 'Circular systems & ESG' },
-  { label: 'Energy',            path: '/energy',            icon: Zap,    desc: 'Bioenergy & sustainable fuels' },
-  { label: 'Agriculture',       path: '/agriculture',       icon: Sprout, desc: 'Climate-smart farming' },
-  { label: 'Strategic Systems', path: '/strategic-systems', icon: Shield, desc: 'Resilient infrastructure' },
-]
+// const seaItems = [
+//   { label: 'Sustainability',    path: '/sustainability',    icon: Leaf,   desc: 'Circular systems & ESG' },
+//   { label: 'Energy',            path: '/energy',            icon: Zap,    desc: 'Bioenergy & sustainable fuels' },
+//   { label: 'Agriculture',       path: '/agriculture',       icon: Sprout, desc: 'Climate-smart farming' },
+//   { label: 'Strategic Systems', path: '/strategic-systems', icon: Shield, desc: 'Resilient infrastructure' },
+// ]
  
 export default function Navbar() {
-  const [scrolled,      setScrolled]      = useState(false)
-  const [seaOpen,       setSeaOpen]       = useState(false)
+  // const [scrolled,      setScrolled]      = useState(false)
+  // const [seaOpen,       setSeaOpen]       = useState(false)
   const [mobileOpen,    setMobileOpen]    = useState(false)
-  const [mobileSeaOpen, setMobileSeaOpen] = useState(false)
+  // const [mobileSeaOpen, setMobileSeaOpen] = useState(false)
   const location  = useLocation()
   const navigate  = useNavigate()
   const dropRef   = useRef(null)
   const isHome    = location.pathname === '/'
 
-  /* scroll detection */
+  const [scrolled, setScrolled] = useState(false)
+  const [visible, setVisible] = useState(true)
+  const lastScrollY = useRef(0)
+
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 50)
+    const fn = () => {
+      const currentY = window.scrollY
+
+      // visible when scrolling up or at top
+      if (currentY < lastScrollY.current || currentY < 50) {
+        setVisible(true)
+      } else {
+        setVisible(false)
+      }
+
+      // scrolled state for background treatment
+      setScrolled(currentY > 50)
+      lastScrollY.current = currentY
+    }
+
     window.addEventListener('scroll', fn, { passive: true })
     return () => window.removeEventListener('scroll', fn)
   }, [])
 
+  /* scroll detection */
+  // useEffect(() => {
+  //   const fn = () => setScrolled(window.scrollY > 50)
+  //   window.addEventListener('scroll', fn, { passive: true })
+  //   return () => window.removeEventListener('scroll', fn)
+  // }, [])
+
   /* close on route change */
   useEffect(() => {
     setMobileOpen(false)
-    setSeaOpen(false)
+    // setSeaOpen(false)
   }, [location])
 
   /* click outside dropdown */
-  useEffect(() => {
-    const fn = (e) => {
-      if (dropRef.current && !dropRef.current.contains(e.target)) setSeaOpen(false)
-    }
-    document.addEventListener('mousedown', fn)
-    return () => document.removeEventListener('mousedown', fn)
-  }, [])
+  // useEffect(() => {
+  //   const fn = (e) => {
+  //     if (dropRef.current && !dropRef.current.contains(e.target)) setSeaOpen(false)
+  //   }
+  //   document.addEventListener('mousedown', fn)
+  //   return () => document.removeEventListener('mousedown', fn)
+  // }, [])
 
   const scrollTo = (id) => {
     setMobileOpen(false)
@@ -59,13 +83,13 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`navbar ${transparent ? 'navbar--transparent' : 'navbar--scrolled'}`}>
+      <nav className={`navbar ${transparent ? 'navbar--transparent' : 'navbar--scrolled'} ${visible ? 'navbar--visible' : 'navbar--hidden'}`}>
         <div className="container">
           <div className="navbar__inner">
 
             {/* Logo */}
             <Link to="/" className="navbar__logo">
-              <img src="/assets/SEA-Tech-logo.png" alt="SEA-Tech Innovations LLP" />
+              <img src="./assets/SEA-Tech-logo.png" alt="SEA-Tech Innovations LLP" />
             </Link>
 
             {/* Desktop Nav */}
@@ -77,7 +101,7 @@ export default function Navbar() {
               />
 
               {/* SEA Dropdown */}
-              <div className="nav-dropdown" ref={dropRef}>
+              {/* <div className="nav-dropdown" ref={dropRef}>
                 <button
                   className={triggerClass}
                   onClick={() => setSeaOpen(v => !v)}
@@ -110,9 +134,10 @@ export default function Navbar() {
                     )
                   })}
                 </div>
-              </div>
-
-              <NavBtn label="Projects & Pilots" onClick={() => scrollTo('projects')} light={transparent} />
+              </div> */}
+              <NavBtn label="Domains"           onClick={()=> scrollTo('domains')}   light={transparent} />
+              <NavBtn label="Research & Pilots" onClick={() => scrollTo('resesrch')} light={transparent} />
+              <NavBtn label="Advisors"          onClick={() => scrollTo('advisors')} light={transparent} />
               <NavBtn label="Insights"          onClick={() => scrollTo('insights')} light={transparent} />
               <NavBtn label="Contact"           onClick={() => scrollTo('contact')}  light={transparent} />
             </div>
@@ -138,7 +163,7 @@ export default function Navbar() {
           <div className="mobile-menu__items">
             <button className="mobile-nav-btn" onClick={() => scrollTo('hero')}>Home</button>
 
-            <div>
+            {/* <div>
               <button
                 className="mobile-sea-trigger"
                 onClick={() => setMobileSeaOpen(v => !v)}
@@ -164,7 +189,7 @@ export default function Navbar() {
                   ))}
                 </div>
               )}
-            </div>
+            </div> */}
 
             <button className="mobile-nav-btn" onClick={() => scrollTo('projects')}>Projects &amp; Pilots</button>
             <button className="mobile-nav-btn" onClick={() => scrollTo('insights')}>Insights</button>

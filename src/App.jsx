@@ -21,10 +21,10 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/"                  element={<Home />} />
-        <Route path="/sustainability"    element={<Sustainability />} />
-        <Route path="/energy"            element={<Energy />} />
-        <Route path="/agriculture"       element={<Agriculture />} />
-        <Route path="/strategic-systems" element={<StrategicSystems />} />
+        {/* <Route path="/sustainability"    element={<Sustainability />} /> */}
+        {/* <Route path="/energy"            element={<Energy />} /> */}
+        {/* <Route path="/agriculture"       element={<Agriculture />} /> */}
+        {/* <Route path="/strategic-systems" element={<StrategicSystems />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>

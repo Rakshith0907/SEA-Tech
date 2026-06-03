@@ -4,7 +4,7 @@ import {
   ArrowRight, Leaf, Zap, Sprout, Shield,
   Cog, Rocket, Building2, GraduationCap,
   Microscope, Network, CheckCircle2, Phone, Mail, Send,
-  FlaskConical, Globe, X
+  FlaskConical, Globe, X,  Plane, Wheat, RefreshCw 
 } from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
 import '../styles/Home.css'
@@ -50,15 +50,14 @@ export default function Home() {
     <main>
       <HeroSection scrollTo={scrollTo} />
       <FounderMessage />
-      {/* <WhoWeAreSection /> */}
-      
+      <WhySeaTech />
       <CoreDomainsSection />
+      <ResearchPilots />
       <AdvisorsSection />
-      {/* <ResearchDeploySection /> */}
-      {/* <SolutionsSection /> */}
       <CollabEcosystem scrollTo={scrollTo} />
-      <ProjectsPilots />
-      <InsightsSection />
+      <InsightsPerspectives /> 
+      {/* <ProjectsPilots /> */}
+      {/* <InsightsSection /> */}
       <ContactSection />
     </main>
   )
@@ -93,8 +92,8 @@ function HeroSection({ scrollTo }) {
             <button onClick={() => scrollTo('domains')} className="btn btn-primary">
               View Innovation Domains
             </button>
-            <button onClick={() => scrollTo('domains')} className="btn btn-primary">
-              View Innovation Domains
+            <button onClick={() => scrollTo('research')} className="btn btn-primary">
+              View Research Innovations
             </button>
           </div>
         </div>
@@ -102,6 +101,10 @@ function HeroSection({ scrollTo }) {
     </section>
   )
 }
+
+/* ══════════════════════════════════════
+   SECTION — FOUNDERS MESSAGE
+══════════════════════════════════════ */
 
 function FounderMessage() {
   return (
@@ -232,6 +235,148 @@ function FounderMessage() {
           </FadeUp>
 
         </div>
+      </div>
+    </section>
+  )
+}
+
+/* ══════════════════════════════════════
+   SECTION — WHY SEA-TECH
+══════════════════════════════════════ */
+
+// const whyCards = [
+//   {
+//     title: 'Sustainability-Driven Innovation',
+//     desc:  'Creating value through sustainability-focused solutions and emerging technologies.',
+//   },
+//   {
+//     title: 'Systems Thinking',
+//     desc:  'Addressing complex challenges across agriculture, energy and circular economy ecosystems.',
+//   },
+//   {
+//     title: 'Research-to-Field Translation',
+//     desc:  'Bridging scientific research with practical implementation and pilot deployment.',
+//   },
+//   {
+//     title: 'Industry–Academia Collaboration',
+//     desc:  'Connecting expertise, innovation and stakeholders to accelerate sustainable outcomes.',
+//   },
+//   {
+//     title: 'Circular Economy Expertise',
+//     desc:  'Transforming underutilized resources into productive environmental and economic value.',
+//   },
+//   {
+//     title: 'Operational Execution Capability',
+//     desc:  'Applying disciplined programme leadership and implementation experience to sustainability initiatives.',
+//   },
+// ]
+
+// function WhySeaTech() {
+//   return (
+//     <section className="section why">
+//       <div className="why__grid-overlay" />
+//       <div className="container">
+//         <FadeUp>
+//           <div className="why__header">
+//             <span className="tag">Our Differentiators</span>
+//             <h2 className="section-heading">Why SEA-Tech</h2>
+//             <p className="section-sub" style={{ margin: '10px auto 0' }}>
+//               Integrating sustainability, innovation and execution to create practical
+//               pathways from concept to impact.
+//             </p>
+//           </div>
+//         </FadeUp>
+
+//         <div className="why__cards">
+//           {whyCards.map((c, i) => (
+//             <FadeUp key={c.title} delay={i * 0.08}>
+//               <div className="why-card">
+//                 <div className="why-card__num">{String(i + 1).padStart(2, '0')}</div>
+//                 <div className="why-card__title">{c.title}</div>
+//                 <p className="why-card__desc">{c.desc}</p>
+//               </div>
+//             </FadeUp>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+const whyCards = [
+  {
+    title: 'Sustainability-Driven Innovation',
+    desc:  'Creating value through sustainability-focused solutions and emerging technologies.',
+    bg:    '#d4ead9',
+  },
+  {
+    title: 'Systems Thinking',
+    desc:  'Addressing complex challenges across agriculture, energy and circular economy ecosystems.',
+    bg:    '#cde6e5',
+  },
+  {
+    title: 'Research-to-Field Translation',
+    desc:  'Bridging scientific research with practical implementation and pilot deployment.',
+    bg:    '#cddce8',
+  },
+  {
+    title: 'Industry–Academia Collaboration',
+    desc:  'Connecting expertise, innovation and stakeholders to accelerate sustainable outcomes.',
+    bg:    '#d6e8cc',
+  },
+  {
+    title: 'Circular Economy Expertise',
+    desc:  'Transforming underutilized resources into productive environmental and economic value.',
+    bg:    '#ddd4ee',
+  },
+  {
+    title: 'Operational Execution Capability',
+    desc:  'Applying disciplined programme leadership and implementation experience to sustainability initiatives.',
+    bg:    '#cde0e8',
+  },
+]
+
+function WhySeaTech() {
+  return (
+    <section className="section why">
+      <div className="why__grid-overlay" />
+      <div className="container">
+        <FadeUp>
+          <div className="why__header">
+            <span className="tag">Our Differentiators</span>
+            <h2 className="section-heading">Why SEA-Tech</h2>
+            <p className="section-sub" style={{ margin: '10px auto 0' }}>
+              Integrating sustainability, innovation and execution to create practical
+              pathways from concept to impact.
+            </p>
+          </div>
+        </FadeUp>
+
+        <FadeUp delay={0.1}>
+          <div className="why__list">
+            {whyCards.map((c, i) => (
+              <div
+                key={c.title}
+                className="why-card"
+              >
+                <div
+                  className="why-card__left"
+                  style={{ background: c.bg }}
+                >
+                  <div className="why-card__num">
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
+                  <div className="why-card__title">{c.title}</div>
+                </div>
+                <div
+                  className="why-card__right"
+                  style={{ background: `${c.bg}99` }}
+                >
+                  <p className="why-card__desc">{c.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </FadeUp>
       </div>
     </section>
   )
@@ -444,7 +589,7 @@ function AdvisorsSection() {
   }, [selected])
 
   return (
-    <section className="section advisors">
+    <section id='advisors' className="section advisors">
       <div className="container">
         <FadeUp>
           <div className="advisors__header">
@@ -640,21 +785,19 @@ function CoreDomainsSection() {
             const isHov = hovered === d.id
             return (
               <FadeUp key={d.id} delay={i * 0.09}>
-                <Link to={d.path} style={{ display: 'block', textDecoration: 'none' }}>
+                <div style={{ display: 'block', textDecoration: 'none' }}>
                   <div
                     className={`domain-card ${isHov ? 'domain-card--hovered' : 'domain-card--default'}`}
                     style={{
                       background: isHov ? d.color : '#fff',
                       borderColor: isHov ? d.color : 'rgba(0,0,0,0.07)',
                     }}
-                    onMouseEnter={() => setHovered(d.id)}
-                    onMouseLeave={() => setHovered(null)}
                   >
                     <div
                       className="domain-card__icon-wrap"
                       style={{ background: isHov ? 'rgba(255,255,255,0.14)' : d.light }}
                     >
-                      <Icon size={22} color={isHov ? '#fff' : d.color} />
+                      <Icon size={24} color={isHov ? '#fff' : d.color} className='spin3d' />
                     </div>
 
                     <h3
@@ -693,7 +836,7 @@ function CoreDomainsSection() {
                       Explore <ArrowRight size={13} />
                     </div> */}
                   </div>
-                </Link>
+                </div>
               </FadeUp>
             )
           })}
@@ -702,6 +845,158 @@ function CoreDomainsSection() {
     </section>
   )
 }
+
+/* ══════════════════════════════════════
+   SECTION — CURRENT RESEARCH, 
+   INNOVATIONS, AND PILOT DEVELOPMENT.
+══════════════════════════════════════ */
+
+const researchItems = [
+  {
+    Icon: Plane,
+    title: 'Sustainable Aviation Fuel Pathways',
+    challenge: 'Decarbonizing aviation requires sustainable alternatives to conventional jet fuel while maintaining energy security and operational performance.',
+    approach: 'Assessing biomass- and waste-derived pathways for sustainable aviation fuel production through feedstock evaluation, process analysis, sustainability assessment, and pilot development planning.',
+    impact: [
+      'Reduced lifecycle greenhouse gas emissions',
+      'Enhanced energy security',
+      'Support for aviation decarbonization',
+    ],
+    status: 'Research & Pilot Development',
+    statusColor: '#22c55e',
+  },
+  {
+    Icon: Wheat,
+    title: 'Biomass Valorization Systems',
+    challenge: 'Large quantities of agricultural residues and organic biomass remain underutilized, resulting in resource inefficiencies and environmental impacts.',
+    approach: 'Developing integrated pathways that convert biomass into sustainable fuels, bioenergy, and value-added bioproducts through technology assessment and pilot-scale innovation.',
+    impact: [
+      'Improved biomass utilization',
+      'Renewable energy and bioproduct generation',
+      'Strengthened circular bioeconomy systems',
+    ],
+    status: 'Research & Pilot Development',
+    statusColor: '#22c55e',
+  },
+  {
+    Icon: Sprout,
+    title: 'Climate-Smart Agriculture Solutions',
+    challenge: 'Agricultural systems face increasing pressures from climate variability, resource constraints, and the need to sustainably improve productivity.',
+    approach: 'Advancing climate-smart agricultural solutions through sustainable farming practices, soil health management, precision agriculture, and resource-efficient technologies.',
+    impact: [
+      'Improved agricultural resilience',
+      'Enhanced resource-use efficiency',
+      'Increased productivity and sustainability',
+    ],
+    status: 'Research & Pilot Development',
+    statusColor: '#22c55e',
+  },
+  {
+    Icon: FlaskConical,
+    title: 'Algae-Based Circular Bioeconomy',
+    challenge: 'The transition toward a low-carbon economy requires innovative biological systems capable of producing renewable fuels, materials, and high-value bioproducts.',
+    approach: 'Exploring algae-based platforms for biomass production, carbon utilization, biofuel generation, wastewater valorization, and sustainable bioproduct development.',
+    impact: [
+      'Carbon utilization and resource recovery',
+      'Renewable fuel and bioproduct generation',
+      'Advancement of circular bioeconomy systems',
+    ],
+    status: 'Research & Pilot Development',
+    statusColor: '#22c55e',
+  },
+  {
+    Icon: RefreshCw,
+    title: 'Carbon & Resource Recovery Systems',
+    challenge: 'Growing environmental pressures demand innovative approaches that reduce emissions, recover valuable resources, and improve system-wide sustainability.',
+    approach: 'Evaluating pathways for carbon sequestration, biochar production, nutrient recovery, waste valorization, and circular resource management.',
+    impact: [
+      'Enhanced carbon management',
+      'Improved resource efficiency',
+      'Reduced environmental impacts',
+    ],
+    status: 'Research & Pilot Development',
+    statusColor: '#22c55e',
+  },
+]
+
+function ResearchPilots() {
+  return (
+    <section id='research' className="section research">
+      <div className="container">
+        <FadeUp>
+          <div className="research__header">
+            <span className="tag">Active Research</span>
+            <h2 className="section-heading">
+              Current Research, Innovation &amp; Pilot Development
+            </h2>
+            <p className="section-sub" style={{ margin: '10px auto 0' }}>
+              Advancing science-driven solutions from concept to pilot-scale development
+              across sustainability, energy, and agriculture.
+            </p>
+          </div>
+        </FadeUp>
+
+        <div className="research__grid">
+          {researchItems.map((item, i) => (
+            <FadeUp key={item.title} delay={i * 0.08}>
+              <div className="research-card">
+
+                <div className="research-card__header">
+                  <div
+                    className="research-card__icon-wrap"
+                    style={{ background: 'rgba(11,61,46,0.08)' }}
+                  >
+                    <item.Icon size={20} color="#0B3D2E" />
+                  </div>
+                  <h3 className="research-card__title">{item.title}</h3>
+                </div>
+
+                <div className="research-card__block">
+                  <div className="research-card__block-label">Challenge</div>
+                  <p className="research-card__block-text">{item.challenge}</p>
+                </div>
+
+                <div className="research-card__block">
+                  <div className="research-card__block-label">Approach</div>
+                  <p className="research-card__block-text">{item.approach}</p>
+                </div>
+
+                <div className="research-card__block">
+                  <div className="research-card__block-label">Expected Impact</div>
+                  <div className="research-card__impact">
+                    {item.impact.map(pt => (
+                      <div key={pt} className="research-card__impact-item">
+                        <span className="research-card__impact-dot" />
+                        {pt}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="research-card__status">
+                  <span
+                    className="research-card__status-dot"
+                    style={{
+                      background: item.statusColor,
+                      boxShadow: `0 0 6px ${item.statusColor}80`,
+                    }}
+                  />
+                  <span
+                    className="research-card__status-text"
+                    style={{ color: item.statusColor }}
+                  >
+                    {item.status}
+                  </span>
+                </div>
+
+              </div>
+            </FadeUp>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 
 /* ══════════════════════════════════════
    SECTION 4 — RESEARCH TO DEPLOYMENT
@@ -800,95 +1095,95 @@ function ResearchDeploySection() {
 /* ══════════════════════════════════════
    SECTION 5 — SOLUTIONS
 ══════════════════════════════════════ */
-const solutions = [
-  {
-    title: 'Agri-Waste to Energy Systems',
-    desc: 'Integrated pathways for converting agricultural residues into scalable energy and fuel systems through biomass conversion, gasification, and pyrolysis.',
-    tags: ['Biomass', 'Bioenergy', 'Waste Valorization'],
-    accent: '#0B3D2E',
-  },
-  {
-    title: 'Sustainable Fuel Ecosystems',
-    desc: 'Research-driven systems for sustainable aviation fuel, biofuels, renewable fuel integration, and low-carbon energy pathways for strategic sectors.',
-    tags: ['SAF', 'Biofuels', 'Renewable Fuels'],
-    accent: '#0E5C5A',
-  },
-  {
-    title: 'Circular Industrial Systems',
-    desc: 'Resource optimization, waste valorization, circular logistics, and sustainable industrial systems designed for real-world operational deployment.',
-    tags: ['Circular Economy', 'Waste-to-Value', 'Industrial'],
-    accent: '#334E68',
-  },
-  {
-    title: 'Climate-Smart Agriculture',
-    desc: 'Advanced agriculture systems integrating resilience, resource efficiency, soil health, agri-energy integration, and regenerative farming approaches.',
-    tags: ['Climate Resilience', 'Soil Carbon', 'Precision Ag'],
-    accent: '#2d6a4f',
-  },
-  {
-    title: 'Strategic Sustainability Systems',
-    desc: 'Sustainable infrastructure and resilient systems for advanced operational environments, remote energy security, and resource-efficient strategic operations.',
-    tags: ['Energy Security', 'Remote Systems', 'Infrastructure'],
-    accent: '#1a4a6e',
-  },
-]
+// const solutions = [
+//   {
+//     title: 'Agri-Waste to Energy Systems',
+//     desc: 'Integrated pathways for converting agricultural residues into scalable energy and fuel systems through biomass conversion, gasification, and pyrolysis.',
+//     tags: ['Biomass', 'Bioenergy', 'Waste Valorization'],
+//     accent: '#0B3D2E',
+//   },
+//   {
+//     title: 'Sustainable Fuel Ecosystems',
+//     desc: 'Research-driven systems for sustainable aviation fuel, biofuels, renewable fuel integration, and low-carbon energy pathways for strategic sectors.',
+//     tags: ['SAF', 'Biofuels', 'Renewable Fuels'],
+//     accent: '#0E5C5A',
+//   },
+//   {
+//     title: 'Circular Industrial Systems',
+//     desc: 'Resource optimization, waste valorization, circular logistics, and sustainable industrial systems designed for real-world operational deployment.',
+//     tags: ['Circular Economy', 'Waste-to-Value', 'Industrial'],
+//     accent: '#334E68',
+//   },
+//   {
+//     title: 'Climate-Smart Agriculture',
+//     desc: 'Advanced agriculture systems integrating resilience, resource efficiency, soil health, agri-energy integration, and regenerative farming approaches.',
+//     tags: ['Climate Resilience', 'Soil Carbon', 'Precision Ag'],
+//     accent: '#2d6a4f',
+//   },
+//   {
+//     title: 'Strategic Sustainability Systems',
+//     desc: 'Sustainable infrastructure and resilient systems for advanced operational environments, remote energy security, and resource-efficient strategic operations.',
+//     tags: ['Energy Security', 'Remote Systems', 'Infrastructure'],
+//     accent: '#1a4a6e',
+//   },
+// ]
 
-function SolutionsSection() {
-  return (
-    <section className="section solutions">
-      <div className="container">
-        <div className="solutions__bg-image" />
-        <FadeUp>
-          <div style={{ marginBottom: 52 }}>
-            <span className="tag">Applied Solutions</span>
-            <h2 className="section-heading">Applied Sustainability Pathways</h2>
-            <p className="section-sub">
-              Real-world sustainability systems built for deployment, scale, and long-term impact.
-            </p>
-          </div>
-        </FadeUp>
+// function SolutionsSection() {
+//   return (
+//     <section className="section solutions">
+//       <div className="container">
+//         <div className="solutions__bg-image" />
+//         <FadeUp>
+//           <div style={{ marginBottom: 52 }}>
+//             <span className="tag">Applied Solutions</span>
+//             <h2 className="section-heading">Applied Sustainability Pathways</h2>
+//             <p className="section-sub">
+//               Real-world sustainability systems built for deployment, scale, and long-term impact.
+//             </p>
+//           </div>
+//         </FadeUp>
 
-        <div className="solutions__list">
-          {solutions.map((s, i) => (
-            <FadeUp key={s.title} delay={i * 0.07}>
-              <div className="solution-card">
-                <div
-                  className="solution-card__band"
-                  style={{
-                    background: `linear-gradient(135deg, ${s.accent}, ${s.accent}cc)`,
-                  }}
-                >
-                  <span className="solution-card__num">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <h3 className="solution-card__title">{s.title}</h3>
-                </div>
-                <div className="solution-card__body">
-                  <p className="solution-card__desc">{s.desc}</p>
-                  <div className="solution-card__tags">
-                    {s.tags.map(t => (
-                      <span
-                        key={t}
-                        className="solution-tag"
-                        style={{
-                          background: `${s.accent}12`,
-                          color: s.accent,
-                          border: `1px solid ${s.accent}30`,
-                        }}
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </FadeUp>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
+//         <div className="solutions__list">
+//           {solutions.map((s, i) => (
+//             <FadeUp key={s.title} delay={i * 0.07}>
+//               <div className="solution-card">
+//                 <div
+//                   className="solution-card__band"
+//                   style={{
+//                     background: `linear-gradient(135deg, ${s.accent}, ${s.accent}cc)`,
+//                   }}
+//                 >
+//                   <span className="solution-card__num">
+//                     {String(i + 1).padStart(2, '0')}
+//                   </span>
+//                   <h3 className="solution-card__title">{s.title}</h3>
+//                 </div>
+//                 <div className="solution-card__body">
+//                   <p className="solution-card__desc">{s.desc}</p>
+//                   <div className="solution-card__tags">
+//                     {s.tags.map(t => (
+//                       <span
+//                         key={t}
+//                         className="solution-tag"
+//                         style={{
+//                           background: `${s.accent}12`,
+//                           color: s.accent,
+//                           border: `1px solid ${s.accent}30`,
+//                         }}
+//                       >
+//                         {t}
+//                       </span>
+//                     ))}
+//                   </div>
+//                 </div>
+//               </div>
+//             </FadeUp>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
 
 /* ══════════════════════════════════════
    SECTION 6 — COLLABORATION ECOSYSTEM
@@ -904,146 +1199,325 @@ const collabNodes = [
 
 function CollabEcosystem({ scrollTo }) {
   const [ref, visible] = useInView(0.1)
-  const R = 130
+  const R = 210
 
   return (
     <section className="section collab">
       <div className="container">
-        <div className="collab__grid">
-          <FadeUp>
+        <FadeUp>
+          <div className="collab__inner">
+
             <div className="collab__text">
               <span className="tag">Collaboration Model</span>
-              <h2 className="section-heading" style={{ marginBottom: 18 }}>
+              <h2 className="section-heading" style={{ marginBottom: 14 }}>
                 Collaboration-Driven Innovation
               </h2>
               <p>
-                SEA-Tech Innovations LLP works through collaborative ecosystems involving:
+                SEA-Tech Innovations LLP works through collaborative ecosystems involving
+                academia, industry, research organisations, pilot programs and sustainability
+                partnerships to accelerate real-world deployment.
               </p>
-              <ul >
-                <li>Academic institutions</li>
-                <li>Research organizations</li>
-                <li>Industry partners</li>
-                <li>Pilot collaborations</li>
-                <li>Technology ecosystems</li>
-                <li>Sustainability stakeholders</li>
-              </ul>
+            </div>
+
+            <div ref={ref} className="collab__diagram">
+              <svg viewBox="-260 -260 520 520" className="collab__svg">
+                <defs>
+                  <filter id="node-shadow" x="-30%" y="-30%" width="160%" height="160%">
+                    <feDropShadow dx="0" dy="4" stdDeviation="10" floodColor="#03c55b" floodOpacity="0.5" />
+                  </filter>
+                  <filter id="center-shadow" x="-40%" y="-40%" width="180%" height="180%">
+                    <feDropShadow dx="0" dy="6" stdDeviation="30" floodColor="#00962d" floodOpacity="1" />
+                  </filter>
+                </defs>
+                {/* Connection lines */}
+                {collabNodes.map((n, i) => {
+                  const rad = (n.angle * Math.PI) / 180
+                  return (
+                    <line
+                      key={i}
+                      x1={0} y1={0}
+                      x2={Math.cos(rad) * R}
+                      y2={Math.sin(rad) * R}
+                      stroke="#0B3D2E" strokeWidth="1" strokeDasharray="4 4"
+                      opacity={visible ? 0.28 : 0}
+                      style={{ transition: `opacity 0.5s ease ${i * 0.09}s` }}
+                    />
+                  )
+                })}
+
+                {/* Center node */}
+                <circle cx={0} cy={0} r={80} fill="#0B3D2E"
+                  filter="url(#center-shadow)"
+                  opacity={visible ? 1 : 0}
+                  style={{ transition: 'opacity 0.5s' }}
+                />
+                <circle cx={0} cy={0} r={90} fill="none" stroke="#0B3D2E"
+                  strokeWidth="1" strokeDasharray="3 3"
+                  opacity={visible ? 0.35 : 0}
+                  style={{ transition: 'opacity 0.5s', animation: 'spin-slow 22s linear infinite' }}
+                />
+                <text x={0} y={0} textAnchor="middle" fill="#fff"
+                  fontFamily="Manrope" fontWeight="800" fontSize="22">SEA-Tech</text>
+                <text x={0} y={18} textAnchor="middle" fill="rgba(255,255,255,0.65)"
+                  fontFamily="Inter" fontSize="13">Innovations LLP</text>
+
+                {/* Outer nodes */}
+                {collabNodes.map((n, i) => {
+                  const rad = (n.angle * Math.PI) / 180
+                  const x   = Math.cos(rad) * R
+                  const y   = Math.sin(rad) * R
+                  return (
+                    <g
+                      key={n.label}
+                      opacity={visible ? 1 : 0}
+                      style={{ transition: `opacity 0.5s ease ${0.18 + i * 0.09}s` }}
+                    >
+                      <circle cx={x} cy={y} r={65} fill="#fff" stroke="#0B3D2E" strokeWidth="1.5" filter="url(#node-shadow)"/>
+                      <circle cx={x} cy={y} r={55} fill="rgba(11,61,46,0.06)" />
+                      <text x={x} y={y+3} textAnchor="middle" fill="#0B3D2E"
+                        fontFamily="Manrope" fontWeight="700" fontSize="13.5">
+                        {n.label.split(' ')[0]}
+                      </text>
+                      {n.label.split(' ').length > 1 && (
+                        <text x={x} y={y + 20} textAnchor="middle" fill="#0E5C5A"
+                          fontFamily="Inter" fontSize="13.5">
+                          {n.label.split(' ').slice(1).join(' ')}
+                        </text>
+                      )}
+                    </g>
+                  )
+                })}
+
+              </svg>
+            </div>
+
+            <div className="collab__btn">
               <button onClick={() => scrollTo('contact')} className="btn btn-primary">
                 Explore Collaboration Opportunities <ArrowRight size={15} />
               </button>
             </div>
-          </FadeUp>
 
-          <div ref={ref} className="collab__diagram">
-            <svg viewBox="-220 -220 440 440" className="collab__svg">
-              {/* Connection lines */}
-              {collabNodes.map((n, i) => {
-                const rad = (n.angle * Math.PI) / 180
-                return (
-                  <line
-                    key={i}
-                    x1={0} y1={0}
-                    x2={Math.cos(rad) * R}
-                    y2={Math.sin(rad) * R}
-                    stroke="#0B3D2E" strokeWidth="1" strokeDasharray="4 4"
-                    opacity={visible ? 0.28 : 0}
-                    style={{ transition: `opacity 0.5s ease ${i * 0.09}s` }}
-                  />
-                )
-              })}
-
-              {/* Center node */}
-              <circle cx={0} cy={0} r={44} fill="#0B3D2E"
-                opacity={visible ? 1 : 0} style={{ transition: 'opacity 0.5s' }} />
-              <circle cx={0} cy={0} r={53} fill="none" stroke="#0B3D2E"
-                strokeWidth="1" strokeDasharray="3 3"
-                opacity={visible ? 0.35 : 0}
-                style={{ transition: 'opacity 0.5s', animation: 'spin-slow 22s linear infinite' }}
-              />
-              <text x={0} y={-6} textAnchor="middle" fill="#fff"
-                fontFamily="Manrope" fontWeight="800" fontSize="9">SEA-Tech</text>
-              <text x={0} y={8} textAnchor="middle" fill="rgba(255,255,255,0.65)"
-                fontFamily="Inter" fontSize="7">Innovations LLP</text>
-
-              {/* Outer nodes */}
-              {collabNodes.map((n, i) => {
-                const rad = (n.angle * Math.PI) / 180
-                const x = Math.cos(rad) * R
-                const y = Math.sin(rad) * R
-                return (
-                  <g
-                    key={n.label}
-                    opacity={visible ? 1 : 0}
-                    style={{ transition: `opacity 0.5s ease ${0.18 + i * 0.09}s` }}
-                  >
-                    <circle cx={x} cy={y} r={32} fill="#fff" stroke="#0B3D2E" strokeWidth="1.5" />
-                    <circle cx={x} cy={y} r={24} fill="rgba(11,61,46,0.06)" />
-                    <text x={x} y={y + 4} textAnchor="middle" fill="#0B3D2E"
-                      fontFamily="Manrope" fontWeight="700" fontSize="7">
-                      {n.label.split(' ')[0]}
-                    </text>
-                    {n.label.split(' ').length > 1 && (
-                      <text x={x} y={y + 13} textAnchor="middle" fill="#0E5C5A"
-                        fontFamily="Inter" fontSize="6">
-                        {n.label.split(' ').slice(1).join(' ')}
-                      </text>
-                    )}
-                  </g>
-                )
-              })}
-            </svg>
           </div>
-        </div>
+        </FadeUp>
       </div>
     </section>
   )
 }
 
 /* ══════════════════════════════════════
-   SECTION 7 — PROJECTS & PILOTS
+   SECTION — INSIGHTS & PERSPECTIVES
 ══════════════════════════════════════ */
-const projects = [
-  { title: 'Agri-Residue Valorization', tag: 'Bioenergy', accent: '#7FB069' },
-  { title: 'Sustainable Fuel Pilot Pathways', tag: 'Sustainable Fuels', accent: '#7FB069' },
-  { title: 'Climate-Smart Agriculture Systems', tag: 'Smart Agriculture', accent: '#7FB069' },
-  { title: 'Circular Industrial Ecosystem Models', tag: 'Circular Systems', accent: '#7FB069' },
-  { title: 'Resource Recovery Systems', tag: 'Climate Systems', accent: '#7FB069' },
-  { title: 'Sustainable Infrastructure Pilots', tag: 'Infrastructure', accent: '#7FB069' },
+
+const insightArticles = [
+  {
+    id: 'resilient-remote',
+    tag: 'Sustainability & Strategy',
+    title: 'Resilient Sustainability Systems for Remote Operations',
+    desc: 'Designing sustainability-driven systems for energy security, resource efficiency and field deployability.',
+    content: [
+      {
+        type: 'highlight',
+        text: 'Sustainability should not be viewed only as a mechanism for reducing environmental impact. It can also be understood as a means of reducing operational dependence.',
+      },
+      {
+        type: 'para',
+        text: 'Sustainability is often discussed in the context of cities, industrial clusters and large infrastructure networks. Yet some of the most demanding operational environments are found far away from established supply chains, utility networks and logistics support systems.',
+      },
+      {
+        type: 'para',
+        text: 'Remote industrial facilities, agricultural regions, mining operations, border infrastructure, island territories and disaster-prone areas all face a common challenge: sustaining critical operations under conditions of uncertainty. In such environments, resilience frequently becomes more important than efficiency alone.',
+      },
+      {
+        type: 'para',
+        text: 'Traditionally, sustainability and resilience have been treated as separate objectives. Sustainability focused on environmental performance, while resilience focused on continuity of operations. Increasingly, however, the two are converging.',
+      },
+      {
+        type: 'para',
+        text: 'A remote facility dependent on long fuel supply chains is vulnerable to disruptions. A water-intensive operation in a drought-prone region faces operational risk. A community dependent on external resource inputs becomes exposed to economic and environmental shocks. In each case, sustainability measures that improve resource efficiency can simultaneously strengthen resilience.',
+      },
+      {
+        type: 'para',
+        text: 'Decentralized energy systems offer a practical example. Hybrid combinations of biomass, bioenergy, solar generation, energy storage and local resource recovery can reduce dependence on distant supply networks. Similarly, water recycling systems and circular resource utilization models can improve operational continuity while reducing environmental burdens.',
+      },
+      {
+        type: 'para',
+        text: 'Agricultural systems provide another illustration. Climate variability is increasingly affecting productivity, water availability and resource planning. Farms that integrate biomass utilization, soil carbon enhancement, resource recycling and diversified production systems often demonstrate greater resilience than highly specialized systems dependent on narrow inputs.',
+      },
+      {
+        type: 'para',
+        text: 'The same principle applies to industrial ecosystems. Facilities capable of recovering value from waste streams, reusing process resources and developing alternative feedstock pathways are often better positioned to withstand market disruptions and resource constraints.',
+      },
+      {
+        type: 'highlight',
+        text: 'Long-term resilience is often built through adaptability. Systems that can utilize multiple resource streams, operate under changing conditions and recover value from existing assets are generally more robust than those optimized for a single set of assumptions.',
+      },
+      {
+        type: 'para',
+        text: 'This is where sustainability and systems thinking intersect. The objective is not simply to reduce emissions or improve resource efficiency. It is to create operational architectures capable of functioning effectively despite uncertainty.',
+      },
+      {
+        type: 'para',
+        text: 'The future will likely present increasing challenges related to climate variability, resource availability, supply-chain complexity and infrastructure stress. Organizations that design sustainability into their operational foundations may find themselves better prepared for these realities.',
+      },
+      {
+        type: 'para',
+        text: 'Viewed through this lens, sustainability is not merely an environmental agenda. It becomes an operational strategy for resilience, continuity and long-term value creation.',
+      },
+      {
+        type: 'para',
+        text: 'In many sectors, the most successful sustainability initiatives may ultimately be those that help systems continue functioning when conditions are far from ideal.',
+      },
+    ],
+  },
+  {
+    id: 'soil-economy',
+    tag: 'Agriculture & Climate',
+    title: 'Climate-Smart Agriculture and the Emerging Soil Economy',
+    desc: 'Integrating soil regeneration, carbon farming and agri-energy systems for climate-resilient agriculture.',
+    content: [
+      {
+        type: 'highlight',
+        text: 'The future of climate-smart agriculture may depend not only on what is grown above the ground, but also on how effectively we understand, restore and manage what lies beneath it.',
+      },
+      {
+        type: 'para',
+        text: 'Agriculture has traditionally been evaluated through a relatively simple lens: productivity. The primary objective was to maximize yield while managing inputs, pests and environmental conditions. Today, however, a broader perspective is beginning to emerge.',
+      },
+      {
+        type: 'para',
+        text: 'Agricultural systems are increasingly expected to deliver multiple outcomes simultaneously. In addition to food and fiber production, they are being asked to contribute to climate resilience, carbon management, resource conservation and sustainable rural development.',
+      },
+      {
+        type: 'para',
+        text: 'At the center of this transition lies a resource that often receives less attention than it deserves: soil. Healthy soils perform functions that extend far beyond crop production. They influence water retention, nutrient cycling, biological activity and ecosystem resilience. They also play an important role in carbon storage, making them increasingly relevant to discussions on sustainability and climate adaptation.',
+      },
+      {
+        type: 'para',
+        text: 'The concept of climate-smart agriculture is therefore evolving beyond precision inputs and digital technologies. It is becoming increasingly connected to soil health, biomass management and long-term ecosystem productivity.',
+      },
+      {
+        type: 'highlight',
+        text: 'One of the most promising developments is the growing recognition of agricultural residues and organic biomass as valuable resources rather than waste products.',
+      },
+      {
+        type: 'para',
+        text: 'Biochar, composted biomass and other soil-enhancing products are attracting attention not only because of their agronomic benefits, but also because of their potential role in carbon management and resource efficiency. These approaches offer opportunities to improve soil quality while reducing dependence on external inputs.',
+      },
+      {
+        type: 'para',
+        text: 'The emerging challenge is to move beyond isolated interventions and toward integrated systems thinking. Agricultural productivity, biomass utilization, energy generation and carbon stewardship are often treated as separate domains despite being closely interconnected.',
+      },
+      {
+        type: 'para',
+        text: 'Future agricultural systems may increasingly resemble biological resource ecosystems rather than conventional production units. A farm could simultaneously produce food, generate biomass resources, enhance soil carbon, contribute to decentralized energy systems and support environmental restoration objectives.',
+      },
+      {
+        type: 'para',
+        text: 'Such integration creates new opportunities for rural economies. Value can be generated not only from crops but also from residues, byproducts and ecosystem services that historically received limited economic recognition.',
+      },
+      {
+        type: 'para',
+        text: 'At the same time, caution is necessary. Sustainable agriculture cannot be achieved through a single technology or practice. Local ecological conditions, water availability, soil characteristics and economic realities must all be considered. Solutions that succeed in one region may not automatically translate to another.',
+      },
+      {
+        type: 'para',
+        text: 'The broader lesson is that agricultural sustainability is ultimately about managing biological systems intelligently. Productivity remains important, but long-term resilience increasingly depends on maintaining the health and functionality of the underlying resource base.',
+      },
+      {
+        type: 'para',
+        text: 'As agriculture adapts to changing environmental and economic conditions, soil may emerge as one of the most strategically important assets in the sustainability transition.',
+      },
+    ],
+  },
 ]
 
-function ProjectsPilots() {
+function InsightsPerspectives() {
+  const [selected, setSelected] = useState(null)
+
+  useEffect(() => {
+    if (selected) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [selected])
+
   return (
-    <section id="projects" className="section projects">
-      <div className="grid-overlay" style={{ opacity: 0.25 }} />
-      <div style={{ position: 'relative', zIndex: 1 }}>
-        <div className="container">
-          <FadeUp>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 18, marginBottom: 44 }}>
-              <div>
-                <span className="tag">Portfolio</span>
-                <h2 className="section-heading light">Projects &amp; Pilot Systems</h2>
-                <p className="section-sub light">
-                  Our work focuses on pilot-ready sustainability systems designed for scalability, operational deployment, and commercialization pathways.                </p>
-              </div>
-            </div>
-          </FadeUp>
-        </div>
-
-        <div className="projects__scroll-row-container">
-
-          <div className="projects__scroll-row">
-            {projects.map((p, i) => (
-              <FadeUp key={p.title} delay={i * 0.07}>
-                <div className="project-card">
-                  <div className="project-card__bar" />
-                  <h3 className="project-card__title">{p.title}</h3>
-                  <span className="project-card__tag">{p.tag}</span>
-                  <div className="project-card__status">Pilot-ready · Scalable</div>
-                </div>
-              </FadeUp>
-            ))}
+    <section id='insights' className="section insights-section">
+      <div className="container">
+        <FadeUp>
+          <div className="insights-section__header">
+            <span className="tag">Thought Leadership</span>
+            <h2 className="section-heading">Insights &amp; Perspectives</h2>
+            <p className="section-sub">
+              Perspectives on sustainability systems, energy transition, agriculture
+              innovation and strategic resilience.
+            </p>
           </div>
+        </FadeUp>
+
+        <div className="insights-section__grid">
+          {insightArticles.map((article, i) => (
+            <FadeUp key={article.id} delay={i * 0.1}>
+              <div
+                className="insight-card"
+                onClick={() => setSelected(article)}
+              >
+                <span className="insight-card__tag">{article.tag}</span>
+                <h3 className="insight-card__title">{article.title}</h3>
+                <p className="insight-card__desc">{article.desc}</p>
+                <div className="insight-card__read">
+                  Read Perspective <ArrowRight size={13} />
+                </div>
+              </div>
+            </FadeUp>
+          ))}
         </div>
       </div>
+
+      {/* Modal */}
+      {selected && (
+        <div
+          className="insight-modal-overlay"
+          onClick={() => setSelected(null)}
+        >
+          <div
+            className="insight-modal"
+            onClick={e => e.stopPropagation()}
+          >
+            <div className="insight-modal__close">
+              <button
+                className="insight-modal__close-btn"
+                onClick={() => setSelected(null)}
+              >
+                <X size={16} />
+              </button>
+            </div>
+
+            <div className="insight-modal__header">
+              <span className="insight-modal__tag">{selected.tag}</span>
+              <h2 className="insight-modal__title">{selected.title}</h2>
+              <p className="insight-modal__desc">{selected.desc}</p>
+            </div>
+
+            <div className="insight-modal__body">
+              {selected.content.map((block, i) => (
+                <p
+                  key={i}
+                  className={
+                    block.type === 'highlight'
+                      ? 'insight-modal__para--highlight'
+                      : 'insight-modal__para'
+                  }
+                >
+                  {block.text}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
