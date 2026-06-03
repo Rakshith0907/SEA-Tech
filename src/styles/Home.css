@@ -15,7 +15,7 @@
 .hero__bg-image {
   position: absolute;
   inset: 0;
-  background-image: url('./assets/hero-bg.jpg');
+  background-image: url('/assets/hero-bg.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -56,7 +56,7 @@
   }
 
   .hero__bg-image {
-    background-image: url('./assets/hero-bg-tablet.jpg');
+    background-image: url('/assets/hero-bg-tablet.jpg');
     background-position: center center;
   }
 
@@ -89,7 +89,7 @@
   }
 
   .hero__bg-image {
-    background-image: url('./assets/hero-bg-minitab.jpg');
+    background-image: url('/assets/hero-bg-minitab.jpg');
     background-position: center center;
     background-size: cover;
   }
@@ -125,7 +125,7 @@
   }
 
   .hero__bg-image {
-    background-image: url('./assets/hero-bg-mobile.jpg');
+    background-image: url('/assets/hero-bg-mobile.jpg');
     background-position: center top;
     background-size: cover;
   }
