@@ -142,13 +142,16 @@
 
   .hero__cta-row {
     flex-direction: column;
-    align-items: center;
+    align-items: start;
+    width: 80%;
     gap: 10px;
+    padding-left: 50px;
   }
 
   .hero__cta-row .btn {
-    width: 75%;
-    justify-content: center;
+    width: 50%;
+    justify-content: start;
+    background-color: #0b3d2ea6;
   }
 }
 

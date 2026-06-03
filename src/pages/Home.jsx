@@ -4,7 +4,7 @@ import {
   ArrowRight, Leaf, Zap, Sprout, Shield,
   Cog, Rocket, Building2, GraduationCap,
   Microscope, Network, CheckCircle2, Phone, Mail, Send,
-  FlaskConical, Globe, X,  Plane, Wheat, RefreshCw 
+  FlaskConical, Globe, X,  Plane, Wheat, RefreshCw, GitBranchPlus
 } from 'lucide-react'
 import { FaWhatsapp } from 'react-icons/fa'
 import '../styles/Home.css'
@@ -86,13 +86,13 @@ function HeroSection({ scrollTo }) {
       <div className="container">
         <div className="hero__content">
           <div className="hero__cta-row">
-            <button onClick={() => scrollTo('contact')} className="btn btn-primary">
+            <button onClick={() => scrollTo('contact')} className="btn btn-outline">
               Explore Collaboration <ArrowRight size={15} />
             </button>
-            <button onClick={() => scrollTo('domains')} className="btn btn-primary">
+            <button onClick={() => scrollTo('domains')} className="btn btn-outline">
               View Innovation Domains
             </button>
-            <button onClick={() => scrollTo('research')} className="btn btn-primary">
+            <button onClick={() => scrollTo('research')} className="btn btn-outline">
               View Research Innovations
             </button>
           </div>
@@ -512,6 +512,19 @@ const researchItems = [
     status: 'Research & Pilot Development',
     statusColor: '#22c55e',
   },
+  {
+    Icon: GitBranchPlus,
+    title: 'Technology Translation & Pilot Validation',
+    challenge: 'Promising sustainability innovations often struggle to progress from research environments to field-ready implementation due to gaps in validation, stakeholder alignment and deployment pathways.',
+    approach: 'Support technology assessment, pilot design, ecosystem engagement and collaborative validation to bridge the gap between innovation and practical application.',
+    impact: [
+      'Accelerated adoption of sustainability solutions',
+      'Reduced implementation risk',
+      'stronger pathways from research outcomes to real-world impact',
+    ],
+    status: 'Technology scouting, stakeholder consultations and pilot collaboration opportunities under exploration.',
+    statusColor: '#2276c5',
+  }
 ]
 
 function ResearchPilots() {
@@ -646,7 +659,7 @@ const advisors = [
   name: 'Prof. (Dr.) Vijay D. Mendhulkar',
   image: '/advisors/DrVijay_DM.jpg',
   role: 'Strategic Advisor — Plant Biotechnology, Bioactive Systems & Sustainable Bioeconomy',
-  bio: 'Distinguished plant scientist, academic leader and researcher with over three decades of experience in plant sciences, biotechnology, cytogenetics, plant cell culture and nanobiotechnology. Former Professor and Head of the Department of Botany at the Institute of Science, Mumbai, Dr. Mendhulkar has contributed extensively to plant-based innovation, bioactive compounds, sustainable bioresource applications and translational research in agriculture and biotechnology.',
+  bio: 'Distinguished plant scientist, academic leader and researcher with over three decades of experience in plant sciences, biotechnology, cytogenetics, and plant cell culture. Former Professor and HoD Botany at the Institute of Science, Mumbai, Dr. Mendhulkar has contributed extensively to plant-based innovation, sustainable bioresource applications and translational research in plant biotechnology.',
   linkedin: 'https://www.linkedin.com/in/prof-vijay-d-mendhulkar-99083139/',
   expertise: [
     'Plant Biotechnology',

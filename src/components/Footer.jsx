@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-center">
-            <span>Sustainability · Energy · Agriculture</span>
+            <span>Sustainability · <span id='footer-energy'>Energy</span> · Agriculture</span>
           </div>
 
           <div className="location">

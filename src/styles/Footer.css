@@ -52,10 +52,15 @@
 }
 
 .footer-center span {
-  font-size: 11px;
-  color: var(--green-mid);
+  font-size: 12px;
+  /* color: rgb(0, 155, 46); */
+  color: var(--accent-muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+#footer-energy{
+  color: rgb(37, 139, 255);
 }
 
 .location {
