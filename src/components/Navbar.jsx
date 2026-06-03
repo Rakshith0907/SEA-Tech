@@ -190,10 +190,12 @@ export default function Navbar() {
                 </div>
               )}
             </div> */}
-
-            <button className="mobile-nav-btn" onClick={() => scrollTo('projects')}>Projects &amp; Pilots</button>
+            <button className="mobile-nav-btn" onClick={()=> scrollTo('domains')}>Domains</button>
+            <button className="mobile-nav-btn" onClick={()=> scrollTo('research')}>Research &amp; Pilots</button>
+            <button className="mobile-nav-btn" onClick={()=> scrollTo('advisors')}>Advisors</button>
             <button className="mobile-nav-btn" onClick={() => scrollTo('insights')}>Insights</button>
             <button className="mobile-nav-btn" onClick={() => scrollTo('contact')}>Contact</button>
+            
 
             <div className="mobile-menu__cta">
               <button
