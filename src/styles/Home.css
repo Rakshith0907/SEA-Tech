@@ -574,7 +574,7 @@
   .why-card__right {
     border-left: none;
     border-top-left-radius: none ;
-    border-top-right-radius: none ;
+    border-top-right-radius: 0 ;
     border-bottom-left-radius: var(--radius);
     border-bottom-right-radius: var(--radius);
     border-bottom-left-radius: no;
@@ -587,8 +587,8 @@
   .why-card__left {
     padding-bottom: 12px;
     border-top-right-radius: var(--radius) ;
-    border-bottom-left-radius: none;
-    border-bottom-right-radius: none ;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: none;
   }
 }
 
