@@ -130,7 +130,7 @@ function FounderMessage() {
                     <circle cx="12" cy="7" r="4"/>
                   </svg> */}
                   {/* <span>Photo coming soon</span> */}
-                  <img src="./public/advisors/DrHena.jpg" alt="Dr. Hena H" className='founder__photo' />
+                  <img src="/advisors/DrHena.jpg" alt="Dr. Hena H" className='founder__photo' />
                 </div>
                 <div className="founder__photo-accent">
                   <Leaf size={28} color="#fff" />
@@ -442,7 +442,7 @@ const advisors = [
     id: 'rklal',
     initials: 'RL',
     name: 'Dr. R.K. Lal',
-    image: './public/advisors/RK_Lal.jpg',
+    image: '/advisors/RK_Lal.jpg',
     role: 'Strategic Advisor — Sustainable Agriculture & Biomass Valorisation',
     bio: 'Senior scientist and plant genetics expert with nearly four decades of experience in medicinal and aromatic plant improvement, mutation breeding, sustainable bioresource systems and agricultural technologies. His work spans crop improvement, biomass systems, translational agricultural research and sustainable bioeconomy applications.',
     linkedin: 'https://www.linkedin.com/in/raj-kishori-lal-35a48a156/',
@@ -486,7 +486,7 @@ const advisors = [
   id: 'vdmendhulkar',
   initials: 'VM',
   name: 'Prof. (Dr.) Vijay D. Mendhulkar',
-  image: './public/advisors/DrVijay_DM.jpg',
+  image: '/advisors/DrVijay_DM.jpg',
   role: 'Strategic Advisor — Plant Biotechnology, Bioactive Systems & Sustainable Bioeconomy',
   bio: 'Distinguished plant scientist, academic leader and researcher with over three decades of experience in plant sciences, biotechnology, cytogenetics, plant cell culture and nanobiotechnology. Former Professor and Head of the Department of Botany at the Institute of Science, Mumbai, Dr. Mendhulkar has contributed extensively to plant-based innovation, bioactive compounds, sustainable bioresource applications and translational research in agriculture and biotechnology.',
   linkedin: 'https://www.linkedin.com/in/prof-vijay-d-mendhulkar-99083139/',
@@ -531,7 +531,7 @@ const advisors = [
   id: 'snmishra',
   initials: 'SM',
   name: 'Group Captain (Prof.) S.N. Mishra',
-  image: './public/advisors/SNMishra.jpg',
+  image: '/advisors/SNMishra.jpg',
   role: 'Strategic Advisor — Climate Science, Weather Risk & Sustainability Systems',
   bio: 'Former Director of Climate Sciences & Weather, Indian Air Force and Senior climate science and meteorology expert with over four decades of experience across climate risk assessment, extreme weather systems, sustainability strategy and operational forecasting in India and internationally. His work spans climate resilience, decarbonization pathways, infrastructure risk analysis and sustainability-linked strategic systems.',
   linkedin: 'https://www.linkedin.com/in/sn-mishra/',
