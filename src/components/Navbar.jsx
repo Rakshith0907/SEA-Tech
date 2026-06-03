@@ -75,6 +75,49 @@ export default function Navbar() {
     }
   }
 
+// const scrollTo = (id) => {
+//   setMobileOpen(false)
+  
+//   const target = document.getElementById(id)
+//   if (!target) return
+
+//   if (location.pathname !== '/') {
+//     navigate('/')
+//     setTimeout(() => smoothScroll(id), 600)
+//   } else {
+//     smoothScroll(id)
+//   }
+// }
+
+// const smoothScroll = (id) => {
+//   const target = document.getElementById(id)
+//   if (!target) return
+
+//   const targetY = target.getBoundingClientRect().top + window.scrollY - 70
+//   const startY = window.scrollY
+//   const distance = targetY - startY
+//   const duration = 1000 // ms — increase for slower, decrease for faster
+
+//   let startTime = null
+
+//   const ease = (t) => t 
+//   < 0.5
+//     ? 4 * t * t * t
+//     : 1 - Math.pow(-2 * t + 2, 3) / 2  // ease in-out cubic
+
+//   const step = (timestamp) => {
+//     if (!startTime) startTime = timestamp
+//     const elapsed = timestamp - startTime
+//     const progress = Math.min(elapsed / duration, 1)
+
+//     window.scrollTo(0, startY + distance * ease(progress))
+
+//     if (progress < 1) requestAnimationFrame(step)
+//   }
+
+//   requestAnimationFrame(step)
+// }
+
   const transparent = isHome && !scrolled
   const triggerClass = transparent
     ? 'nav-dropdown__trigger nav-dropdown__trigger--light'
@@ -95,7 +138,7 @@ export default function Navbar() {
             <div className="navbar__desktop">
               <NavBtn className="desk-nav" label="Home"              onClick={() => scrollTo('hero')}     light={transparent}/>
               <NavBtn className="desk-nav" label="Domains"           onClick={()=> scrollTo('domains')}   light={transparent} />
-              <NavBtn className="desk-nav" label="Research & Pilots" onClick={() => scrollTo('resesrch')} light={transparent} />
+              <NavBtn className="desk-nav" label="Research & Pilots" onClick={() => scrollTo('research')} light={transparent} />
               <NavBtn className="desk-nav" label="Advisors"          onClick={() => scrollTo('advisors')} light={transparent} />
               <NavBtn className="desk-nav" label="Insights"          onClick={() => scrollTo('insights')} light={transparent} />
               <NavBtn className="desk-nav" label="Contact"           onClick={() => scrollTo('contact')}  light={transparent} />
