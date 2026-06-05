@@ -3,10 +3,7 @@ import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import Sustainability from './pages/Sustainability'
-import Energy from './pages/Energy'
-import Agriculture from './pages/Agriculture'
-import StrategicSystems from './pages/StrategicSystems'
+
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -21,10 +18,6 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/"                  element={<Home />} />
-        {/* <Route path="/sustainability"    element={<Sustainability />} /> */}
-        {/* <Route path="/energy"            element={<Energy />} /> */}
-        {/* <Route path="/agriculture"       element={<Agriculture />} /> */}
-        {/* <Route path="/strategic-systems" element={<StrategicSystems />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>
