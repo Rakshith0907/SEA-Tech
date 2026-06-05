@@ -460,8 +460,8 @@ const researchItems = [
   {
     Icon: Plane,
     title: 'Sustainable Aviation Fuel Pathways',
-    challenge: 'Decarbonizing aviation requires sustainable alternatives to conventional jet fuel while maintaining energy security and operational performance.',
-    approach: 'Assessing biomass- and waste-derived pathways for sustainable aviation fuel production through feedstock evaluation, process analysis, sustainability assessment, and pilot development planning.',
+    challenge: 'Decarbonizing aviation requires sustainable alternatives to conventional jet fuel while maintaining energy security and performance.',
+    approach: 'Assessing biomass- and waste-derived pathways for sustainable aviation fuel production through feedstock evaluation, process analysis, sustainability assessment, and pilot development.',
     impact: [
       'Reduced lifecycle greenhouse gas emissions',
       'Enhanced energy security',
@@ -525,14 +525,14 @@ const researchItems = [
   {
     Icon: GitBranchPlus,
     title: 'Technology Translation & Pilot Validation',
-    challenge: 'Promising sustainability innovations often struggle to progress from research environments to field-ready implementation due to gaps in validation, stakeholder alignment and deployment pathways.',
+    challenge: 'Promising sustainability innovations often struggle to reach field-ready implementation due to gaps in validation, stakeholder alignment and deployment pathways.',
     approach: 'Support technology assessment, pilot design, ecosystem engagement and collaborative validation to bridge the gap between innovation and practical application.',
     impact: [
       'Accelerated adoption of sustainability solutions',
       'Reduced implementation risk',
-      'stronger pathways from research outcomes to real-world impact',
+      'Pathways from research outcomes to impact',
     ],
-    status: 'Technology scouting, stakeholder consultations and pilot collaboration opportunities under exploration.',
+    status: 'Technology scouting, stakeholder consultations and pilot collaboration under exploration.',
     statusColor: '#2276c5',
   }
 ]
@@ -1097,7 +1097,7 @@ const insightArticles = [
   {
     id: 'soil-economy',
     tag: 'Agriculture & Climate',
-    title: 'Climate-Smart Agriculture and the Emerging Soil Economy',
+    title: 'Climate-Smart Agriculture and Emerging Soil Economy',
     desc: 'Integrating soil regeneration, carbon farming and agri-energy systems for climate-resilient agriculture.',
     content: [
       {

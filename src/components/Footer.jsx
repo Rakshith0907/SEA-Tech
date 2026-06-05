@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-center">
-            <span>· Biomass Valorization · Sustainable Fuel Pathways ·<br />· Climate-Smart Agriculture · Soil Carbon Systems ·<br />· Circular Bioeconomy ·</span>
+            <span>· Biomass Valorization · Sustainable Fuel Pathways ·<br />· Climate-Smart Agriculture · Soil Carbon Systems ·<br />· Circular Bioeconomy · Tech Translation & Pilot Development ·</span>
           </div>
 
           <div className="location">
