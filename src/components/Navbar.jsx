@@ -86,6 +86,29 @@ export default function Navbar() {
     }
   }, [mobileOpen])
 
+  useEffect(() => {
+    const fn = () => {
+      const currentY = window.scrollY
+
+      if (currentY < lastScrollY.current) {
+        // scrolling up — show navbar
+        setVisible(true)
+        document.body.classList.remove('navbar-hidden')
+      } else if (currentY > lastScrollY.current && currentY > 80) {
+        // scrolling down and past 80px — hide navbar
+        setVisible(false)
+        document.body.classList.add('navbar-hidden')
+      }
+
+      // always update scrolled state
+      setScrolled(currentY > 50)
+      lastScrollY.current = currentY
+    }
+
+    window.addEventListener('scroll', fn, { passive: true })
+    return () => window.removeEventListener('scroll', fn)
+  }, [])
+
 // const scrollTo = (id) => {
 //   setMobileOpen(false)
   

@@ -9,6 +9,7 @@ import {
 import { FaWhatsapp } from 'react-icons/fa'
 import '../styles/Home.css'
 import TopologyBackground from '../components/TopologyComponent'
+import emailjs from '@emailjs/browser'
 
 /* ── Intersection observer hook ── */
 function useInView(threshold = 0.12) {
@@ -60,11 +61,10 @@ export default function Home() {
           <AdvisorsSection />
           <CollabEcosystem scrollTo={scrollTo} />
           <InsightsPerspectives />
+          <ContactSection />
         </div>
       </div>
-      {/* <ProjectsPilots /> */}
-      {/* <InsightsSection /> */}
-      <ContactSection />
+
     </main>
   )
 }
@@ -971,20 +971,32 @@ function CollabEcosystem({ scrollTo }) {
                 })}
 
                 {/* Center node */}
-                <circle cx={0} cy={0} r={80} fill="#0B3D2E"
+                <circle cx={0} cy={0} r={95} fill="#fff" stroke="#0B3D2E" strokeWidth="1.5" filter="url(#node-shadow)" />
+                <circle cx={0} cy={0} r={85} fill="rgba(11,61,46,0.06)"
                   filter="url(#center-shadow)"
                   opacity={visible ? 1 : 0}
                   style={{ transition: 'opacity 0.5s' }}
                 />
-                <circle cx={0} cy={0} r={90} fill="none" stroke="#0B3D2E"
+                <circle cx={0} cy={0} r={105} fill="none" stroke="#0B3D2E"
                   strokeWidth="1" strokeDasharray="3 3"
                   opacity={visible ? 0.35 : 0}
                   style={{ transition: 'opacity 0.5s', animation: 'spin-slow 22s linear infinite' }}
                 />
-                <text x={0} y={0} textAnchor="middle" fill="#fff"
+                {/* <text x={0} y={0} textAnchor="middle" fill="#fff"
                   fontFamily="Manrope" fontWeight="800" fontSize="22">SEA-Tech</text>
                 <text x={0} y={18} textAnchor="middle" fill="rgba(255,255,255,0.65)"
-                  fontFamily="Inter" fontSize="13">Innovations LLP</text>
+                  fontFamily="Inter" fontSize="13">Innovations LLP</text> */}
+
+                <image
+                  href="/assets/SEA-logo.png"
+                  x={-83}
+                  y={-35}
+                  width={170}
+                  height={70}
+                  opacity={visible ? 1 : 0}
+                  style={{ transition: 'opacity 0.5s' }}
+                  preserveAspectRatio="xMidYMid meet"
+                />
 
                 {/* Outer nodes */}
                 {collabNodes.map((n, i) => {
@@ -1260,7 +1272,9 @@ function ContactSection() {
   const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
   const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
-  const handleSubmit = (e) => {
+  // console.log(EMAILJS_PUBLIC_KEY)
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setSending(true)
     setError(false)
@@ -1309,18 +1323,17 @@ function ContactSection() {
               </p>
 
               <div className="contact__links">
-                <a href="tel:8828208244" className="contact__link">
+                <a href="tel:7484040228" className="contact__link">
                   <div className="contact__link-icon">
                     <Phone size={17} color="#7FB069" />
                   </div>
                   <div>
                     <div className="contact__link-label">Call</div>
-                    <div className="contact__link-value">8828208244</div>
+                    <div className="contact__link-value">7484040228</div>
                   </div>
                 </a>
-
                 <a
-                  href="https://wa.me/9969608290"
+                  href="https://wa.me/7484040228"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact__link"
@@ -1330,7 +1343,7 @@ function ContactSection() {
                   </div>
                   <div>
                     <div className="contact__link-label">WhatsApp</div>
-                    <div className="contact__link-value">9969608290</div>
+                    <div className="contact__link-value">7484040228</div>
                   </div>
                 </a>
 

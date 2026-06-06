@@ -32,7 +32,22 @@ export default function Footer() {
           </div>
 
           <div className="footer-center">
-            <span>· Biomass Valorization · Sustainable Fuel Pathways ·<br />· Climate-Smart Agriculture · Soil Carbon Systems ·<br />· Circular Bioeconomy · Tech Translation & Pilot Development ·</span>
+            {/* <div className="theme-tags">
+              {['Circular Bioeconomy', 'Sustainable Fuel Pathways', 'Climate-Smart Agriculture', 
+                'Biomass Valorization', 'Soil Carbon Systems', 'Pilot Validation'].map(t => (
+                <span key={t} className="theme-tag"> · {t} </span>
+              ))}
+            </div> */}
+            <div className="theme-tags-left">
+              <span> · Circular Bioeconomy <br /></span>
+              <span> · Sustainable Fuel Pathways <br /></span>
+              <span> · Climate-Smart Agriculture <br /></span>
+            </div>
+            <div className="theme-tags-right">
+              <span> · Pilot Validation <br /></span>
+              <span> · Biomass Valorization <br /></span>
+              <span> · Soil Carbon Systems <br /></span>
+            </div>
           </div>
 
           <div className="location">

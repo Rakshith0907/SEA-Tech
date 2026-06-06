@@ -53,13 +53,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 35%;
   text-align: center;
+  /* text-justify: inter-word;
+  hyphens: none; */
+  /* border: 1px solid red; */
 }
 
-.footer-center span {
+.theme-tags-left {
+  /* border: 1px solid yellow; */
+  width: 50%;
+}
+.theme-tags-right{
+  /* border: 1px solid orangered; */
+  width: 50%;
+}
+
+.theme-tags-left span {
   font-size: 11px;
-  /* color: rgb(0, 155, 46); */
+  color: rgb(0, 155, 46);
+  color: var(--accent-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.theme-tags-right span {
+  font-size: 11px;
+  color: rgb(0, 155, 46);
   color: var(--accent-muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;

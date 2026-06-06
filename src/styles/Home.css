@@ -205,18 +205,18 @@
 }
 
 .founder__photo {
-  width: 100%;
-  aspect-ratio: 15/14;
+  width: 98%;
+  aspect-ratio: 1/1;
   object-fit: cover;
-  border-radius: 18px;
+  border-radius: 50%;
   display: block;
   background: var(--offwhite);
 }
 
 .founder__photo-placeholder {
-  width: 70%;
-  aspect-ratio: 15/14;
-  border-radius: 18px;
+  width: 50%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
   background: linear-gradient(145deg, #e8f0ec, #d0e3d8);
   display: flex;
   flex-direction: column;
@@ -628,7 +628,8 @@
   border-radius: 20px;
   width: 100%;
   max-width: 680px;
-  max-height: 88vh;
+  max-height: 80vh;
+  margin-top: 100px;
   overflow-y: auto;
   position: relative;
   animation: fadeUp 0.3s ease;
@@ -636,6 +637,11 @@
   -ms-overflow-style: none; 
   /* scrollbar-color: var(--teal) #f0f4f2; */
 }
+
+/* .navbar-hidden .advisor-modal {
+  max-height: 90vh;
+  margin-top: 0;
+} */
 
 .advisor-modal::-webkit-scrollbar {
   display: none;      
@@ -1256,20 +1262,26 @@
   background: rgba(0,0,0,0.6);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  z-index: 2000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
   animation: fadeIn 0.25s ease;
+  z-index: 9999;
 }
+
+/* .navbar-hidden .insight-modal {
+  max-height: 90vh;
+  margin-top: 0;
+} */
 
 .insight-modal {
   background: #fff;
   border-radius: 20px;
   width: 100%;
+  margin-top: 100px;
   max-width: 760px;
-  max-height: 90vh;
+  max-height: 80vh;
   overflow-y: auto;
   position: relative;
   animation: fadeUp 0.3s ease;
@@ -1380,6 +1392,7 @@
   background: linear-gradient(150deg, #071812 0%, #0B3D2E 45%, #0d3a38 100%);
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .contact::before {
