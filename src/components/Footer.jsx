@@ -39,14 +39,14 @@ export default function Footer() {
               ))}
             </div> */}
             <div className="theme-tags-left">
-              <span> · Circular Bioeconomy <br /></span>
-              <span> · Sustainable Fuel Pathways <br /></span>
-              <span> · Climate-Smart Agriculture <br /></span>
-            </div>
-            <div className="theme-tags-right">
               <span> · Pilot Validation <br /></span>
               <span> · Biomass Valorization <br /></span>
               <span> · Soil Carbon Systems <br /></span>
+            </div>
+            <div className="theme-tags-right">
+              <span> · Circular Bioeconomy <br /></span>
+              <span> · Sustainable Fuel Pathways <br /></span>
+              <span> · Climate-Smart Agriculture <br /></span>
             </div>
           </div>
 
