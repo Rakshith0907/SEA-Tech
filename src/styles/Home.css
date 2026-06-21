@@ -415,15 +415,11 @@
 }
 
 .why__list {
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   gap: 12px;
   position: relative;
   z-index: 1;
-  /* border-radius: var(--radius); */
-  /* overflow: visible; */
-  /* box-shadow: var(--shadow-xl); */
   background: var(--white);
 }
 
@@ -545,8 +541,6 @@
 .advisor-card__avatar {
   width: 56px;
   height: 56px;
-  /* border-radius: 50%; */
-  /* background: linear-gradient(135deg, var(--green), var(--teal)); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -638,10 +632,6 @@
   /* scrollbar-color: var(--teal) #f0f4f2; */
 }
 
-/* .navbar-hidden .advisor-modal {
-  max-height: 90vh;
-  margin-top: 0;
-} */
 
 .advisor-modal::-webkit-scrollbar {
   display: none;      
@@ -685,8 +675,6 @@
 .advisor-modal__avatar {
   width: 100px;
   height: 100px;
-  /* border-radius: 50%; */
-  /* background: linear-gradient(135deg, var(--green), var(--teal)); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -867,15 +855,6 @@
   box-shadow: var(--shadow-sm);
 }
 
-/* .domain-card--default {
-  background: #fff;
-  box-shadow: var(--shadow-sm);
-} */
-
-/* .domain-card--hovered {
-  transform: translateY(-7px);
-  box-shadow: 0 20px 52px rgba(0,0,0,0.18);
-} */
 
 .domain-card__icon-wrap {
   width: 50px;
